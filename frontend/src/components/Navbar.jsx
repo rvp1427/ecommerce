@@ -23,7 +23,7 @@ function Navbar() {
   return (
     <nav className="flex justify-between items-center relative ">
       <NavLink to="/" className="border-none">
-        <img src="/logo.png" alt="logo" className="h-12" />
+        <img src="/logo.png" alt="logo" className="h-12 shadow-none" />
       </NavLink>
       <ul
         className={`md:flex gap-8 transition duration-700 md:translate-x-0 items-center justify-center flex-wrap ${
