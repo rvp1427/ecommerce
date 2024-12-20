@@ -46,7 +46,7 @@ function ProductDetail({ product }) {
             />
           ))}
         </div>
-        <img src={`/${currImg}`} alt={product.name} className="md:w-9/12" />
+        <img src={`/${currImg}.png`} alt={product.name} className="md:w-9/12" />
       </div>
       <div className="space-y-4 w-full">
         <h2>{product.name}</h2>

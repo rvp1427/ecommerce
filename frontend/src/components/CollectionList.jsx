@@ -1,3 +1,4 @@
+import Loading from "./Loading";
 import { useProd } from "./ProductContext";
 import { Link } from "react-router-dom";
 
@@ -5,9 +6,12 @@ function CollectionList() {
   const { collection, filteredCollection } = useProd();
   const collect =
     filteredCollection.length > 0 ? filteredCollection : collection;
+  // console.log("test");
   return (
     <div className="grid-col">
-      {collection.length > 0 &&
+      {collection.length === 0 ? (
+        <Loading />
+      ) : (
         collect.map((prod) => (
           <Link key={prod._id} to={`${prod._id}`}>
             <div className="w-full overflow-hidden">
@@ -18,7 +22,8 @@ function CollectionList() {
               <h3>${prod.price}</h3>
             </div>
           </Link>
-        ))}
+        ))
+      )}
     </div>
   );
 }

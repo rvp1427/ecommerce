@@ -1,15 +1,20 @@
 import { useEffect, useState } from "react";
 import { bestsellerProd } from "../utilities/productfetch";
+import Loading from "./Loading";
+import ProductItem from "./ProductItem";
 
 function BestSeller() {
   const [bestseller, setBestseller] = useState([]);
   useEffect(function () {
-    bestsellerProd().then((data) => setBestseller(data.best));
+    bestsellerProd().then((data) => {
+      setBestseller(data.best);
+    });
   }, []);
+  console.log(bestseller);
 
   return (
-    <>
-      <div className=" text-center">
+    <div className="space-y-5">
+      <div className="text-center">
         <div className="line-con">
           <h2>BEST SELLERS</h2>
           <div className="line"></div>
@@ -19,19 +24,17 @@ function BestSeller() {
           industry. Lorem Ipsum has been the.
         </p>
       </div>
-      <div className="grid-col">
-        {bestseller.length > 0 &&
+
+      <div className="grid-col text-center">
+        {bestseller.length === 0 ? (
+          <Loading />
+        ) : (
           bestseller.map((item) => (
-            <div key={item._id} className="w-full">
-              <img src={item.product.image[0]} alt="" />
-              <div>
-                <p>{item.product.name}</p>
-                <h3>${item.product.price}</h3>
-              </div>
-            </div>
-          ))}
+            <ProductItem key={item._id} item={item.product} />
+          ))
+        )}
       </div>
-    </>
+    </div>
   );
 }
 

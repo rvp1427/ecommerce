@@ -1,7 +1,4 @@
-function Select({ options }) {
-  function handleChange(e) {
-    console.log(e.target.value);
-  }
+function Select({ options, handleChange }) {
   return (
     <select onChange={handleChange} name={name} className="select-collection">
       {options.map(({ tag, value }) => (

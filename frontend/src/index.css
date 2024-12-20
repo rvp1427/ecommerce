@@ -8,7 +8,7 @@
   }
 
   i {
-    @apply text-4xl;
+    @apply text-3xl;
   }
   img {
     @apply max-w-full object-cover hover:scale-105 cursor-pointer duration-300 transition;
@@ -43,7 +43,7 @@
   }
 
   .select-collection {
-    @apply border-2 p-4 border-gray-600;
+    @apply border-2 p-2 border-gray-600;
   }
 
   /* .prod-img > img:first-child {

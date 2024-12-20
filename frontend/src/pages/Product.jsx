@@ -18,10 +18,10 @@ function Product() {
   return (
     <div>
       {product && (
-        <>
+        <div className="space-y-10">
           <ProductDetail product={product} />
           <RelatedProducts product={product} />
-        </>
+        </div>
       )}
     </div>
   );

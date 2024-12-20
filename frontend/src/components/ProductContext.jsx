@@ -18,6 +18,8 @@ function ProductContext({ children }) {
     setFilteredCollection(collection);
   }, []);
 
+  // console.log("collection");
+
   useEffect(
     function () {
       if (filtername.length > 0) {
@@ -74,6 +76,7 @@ function ProductContext({ children }) {
         setFiltername,
         filteredCollection,
         relatedProducts,
+        setCollections,
       }}
     >
       {children}

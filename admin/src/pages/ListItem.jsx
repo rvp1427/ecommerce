@@ -32,7 +32,7 @@ function ListItem() {
     <div className="w-full">
       <h1>All Products List</h1>
       {productData.length > 0 ? (
-        <table className="w-[74rem]">
+        <table className="max-w-[60rem]">
           <thead className="">
             <tr>
               <th>Image</th>

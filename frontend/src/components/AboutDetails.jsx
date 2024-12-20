@@ -6,10 +6,10 @@ function AboutDetails() {
         <div className="line"></div>
       </div>
       <div className="flex flex-full flex-col gap-12 md:flex-row">
-        <div className="max-h-full">
-          <img src="about_img.png" alt="about" />
+        <div className="max-h-[30rem]">
+          <img src="/about_img.png" alt="about" className="w-full h-full" />
         </div>
-        <div className="space-y-10">
+        <div className="space-y-5">
           <p>
             Forever was born out of a passion for innovation and a desire to
             revolutionize the way people shop online. Our journey began with a

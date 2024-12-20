@@ -29,7 +29,7 @@ function OrderItem() {
   return (
     <div>
       <h1>Order Page</h1>
-      <table className="w-[74rem]">
+      <table className="max-w-[60rem]">
         <tbody className="">
           {orderData.length > 0 &&
             orderData.map((order) => (

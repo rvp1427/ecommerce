@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useCart } from "./CartContext";
 
@@ -19,7 +19,7 @@ function Navbar() {
 
   return (
     <nav className="flex justify-between items-center relative ">
-      <img src="/logo.png" alt="logo" className="h-14" />
+      <img src="/logo.png" alt="logo" className="h-12" />
       <ul
         className={`md:flex gap-8 transition duration-700 md:translate-x-0 items-center justify-center flex-wrap ${
           active
@@ -48,7 +48,9 @@ function Navbar() {
           <NavLink to="/contact">CONTACT</NavLink>
         </li>
         <li className="border-2 px-6 py-2 inline-block rounded-full">
-          <NavLink to="/admin">Admin Panel</NavLink>
+          <NavLink to="https://ecommerce-admin-4xsh.onrender.com">
+            Admin Panel
+          </NavLink>
         </li>
       </ul>
 

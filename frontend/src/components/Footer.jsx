@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <div className="flex gap-10 mt-auto">
+    <div className="flex gap-10 mt-20 pt-10 border-t-2">
       <div className="w-2/3">
         <img src="/logo.png" alt="logo" className="h-12" />
         <p>
