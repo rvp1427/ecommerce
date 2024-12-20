@@ -7,8 +7,8 @@ function OrderItem() {
   const [orderData, setOrderData] = useState([]);
 
   useEffect(function () {
-    fetchData("http://127.0.0.1:4000/api/order").then((data) =>
-      setOrderData(data.order)
+    fetchData("https://ecommerce-backend-efmv.onrender.com/api/order").then(
+      (data) => setOrderData(data.order)
     );
   }, []);
   // console.log(orderData);
@@ -20,7 +20,7 @@ function OrderItem() {
       status: value,
     };
     fetchData(
-      `http://127.0.0.1:4000/api/order/updateStatus/${orderId}`,
+      `https://ecommerce-backend-efmv.onrender.com/api/order/updateStatus/${orderId}`,
       "PATCH",
       data
     ).then((data) => console.log(data));

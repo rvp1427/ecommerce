@@ -1,6 +1,8 @@
+const url = "https://ecommerce-backend-efmv.onrender.com";
+
 export async function latestProd() {
   try {
-    const prod = await fetch("http://localhost:4000/api/product/latest");
+    const prod = await fetch(`${url}/api/product/latest`);
     const data = await prod.json();
     return data;
   } catch (err) {
@@ -10,7 +12,7 @@ export async function latestProd() {
 
 export async function bestsellerProd() {
   try {
-    const prod = await fetch("http://localhost:4000/api/product/bestseller");
+    const prod = await fetch(`${url}/api/product/bestseller`);
     const data = await prod.json();
     return data;
   } catch (err) {
@@ -20,7 +22,7 @@ export async function bestsellerProd() {
 
 export async function collections() {
   try {
-    const prod = await fetch("http://localhost:4000/api/product");
+    const prod = await fetch(`${url}/api/product`);
     const data = await prod.json();
     return data;
   } catch (err) {
@@ -30,7 +32,7 @@ export async function collections() {
 
 export async function getProduct(id) {
   try {
-    const prod = await fetch(`http://localhost:4000/api/product/${id}`);
+    const prod = await fetch(`${url}/api/product/${id}`);
     const data = await prod.json();
     return data;
   } catch (err) {
@@ -40,7 +42,7 @@ export async function getProduct(id) {
 
 export async function updateUser(id, userData) {
   try {
-    const prod = await fetch(`http://127.0.0.1:4000/api/user/${id}`, {
+    const prod = await fetch(`${url}/api/user/${id}`, {
       method: "post",
       body: JSON.stringify(userData),
       headers: {
@@ -57,7 +59,7 @@ export async function updateUser(id, userData) {
 export async function createOrder(id, cart) {
   try {
     // console.log(cart);
-    const prod = await fetch(`http://127.0.0.1:4000/api/order/${id}`, {
+    const prod = await fetch(`${url}/api/order/${id}`, {
       method: "post",
       body: JSON.stringify(cart),
       headers: {
@@ -74,7 +76,7 @@ export async function createOrder(id, cart) {
 export async function login(dataObj, type) {
   try {
     console.log(dataObj, type);
-    const prod = await fetch(`http://127.0.0.1:4000/api/user/${type}`, {
+    const prod = await fetch(`${url}/api/user/${type}`, {
       method: "post",
       body: JSON.stringify(dataObj),
       headers: {
