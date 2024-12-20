@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  img {
+    @apply max-w-full;
+  }
+
+  .inp {
+    @apply border-2 w-full p-2 rounded-md;
+  }
+
+  textarea {
+    @apply border-2 w-full p-2 rounded-md resize-none;
+  }
+
+  a > h2 {
+    @apply hidden md:block;
+  }
+  a:visited,
+  a.active {
+    @apply border-red-400 bg-red-100;
+  }
+
+  form {
+    @apply w-full max-w-[40rem];
+  }
+
+  tr {
+    @apply inline-table w-full mb-2 text-start;
+  }
+  thead {
+    @apply bg-gray-100 border-2 mb-3 inline-table w-full;
+  }
+  tbody {
+    @apply text-center table-row;
+  }
+  tbody > tr {
+    @apply border-2;
+  }
+  td {
+    @apply p-2 w-1/5 text-center;
+  }
+  th {
+    @apply text-center;
+  }
+}
+
+@layer utilities {
+  .btn {
+    @apply px-10 bg-gray-700 text-white py-2 rounded-lg;
+  }
+  .link-style {
+    @apply inline-flex px-14 py-2 border-2 gap-3;
+  }
+
+  .grid-style {
+    display: grid;
+    grid-template-columns: minmax(max-content, 10rem) minmax(max-content, 1fr);
+    grid-template-rows: min-content 1fr;
+    min-height: 100vh;
+  }
+  .grid-style > * {
+    @apply border-2 border-t-0 p-4;
+  }
+
+  .con {
+    @apply w-11/12 m-auto;
+  }
+
+  .section > * {
+    @apply border-2;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-column: 1 / span 2;
+  }
+}

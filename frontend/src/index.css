@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .con {
+    @apply w-11/12 m-auto flex flex-col min-h-screen gap-6 py-5;
+  }
+
+  i {
+    @apply text-4xl;
+  }
+  img {
+    @apply max-w-full object-cover hover:scale-105 cursor-pointer duration-300 transition;
+  }
+
+  .line {
+    @apply w-14 h-0.5 bg-black;
+  }
+  .line-con {
+    @apply flex items-center gap-3 justify-self-center;
+  }
+
+  .inp {
+    @apply border-2 border-gray-300 py-2 px-2 flex-grow w-full font-semibold;
+  }
+
+  .btn {
+    @apply bg-black text-white font-medium px-10 py-3 uppercase;
+  }
+  .section {
+    @apply space-y-20;
+  }
+
+  .flex-full > * {
+    @apply w-full;
+  }
+
+  .grid-col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 1rem;
+  }
+
+  .select-collection {
+    @apply border-2 p-4 border-gray-600;
+  }
+
+  /* .prod-img > img:first-child {
+    @apply bg-red-300 w-[20rem];
+  } */
+
+  tr {
+    @apply border-2 border-x-0 w-full;
+  }
+
+  td {
+    @apply py-5 px-2 w-fit;
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    /* margin: 0; */
+    padding: 0;
+  }
+
+  h1 {
+    @apply font-normal text-gray-800 text-4xl md:text-6xl;
+  }
+  h2 {
+    @apply font-normal text-gray-800 md:text-2xl sm:text-sm;
+  }
+  h3 {
+    @apply font-semibold md:text-lg sm:text-xs;
+  }
+
+  p {
+    @apply text-gray-500 text-lg font-semibold;
+  }
+  a.active {
+    @apply border-b-4 border-black;
+  }
+}
