@@ -25,5 +25,5 @@ mongoose
 
 const port = process.env.PORT;
 app.listen(port, (req, res) => {
-  console.log("server listning on 4000");
+  console.log("server listning on 3000");
 });
