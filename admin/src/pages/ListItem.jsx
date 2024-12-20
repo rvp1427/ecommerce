@@ -3,7 +3,7 @@ import { fetchData } from "../utils";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
-const originalUrl = "http://localhost:4000/api/product";
+const originalUrl = "https://ecommerce-backend-efmv.onrender.com/api/product";
 
 function ListItem() {
   const [productData, setProductData] = useState([]);
@@ -18,14 +18,15 @@ function ListItem() {
   );
 
   function handleDelete(id) {
-    fetchData(`http://localhost:4000/api/product/${id}`, "delete").then(
-      (data) => {
-        if (data.prod.acknowledged) {
-          toast.success("deleted successfully");
-          navigate("/");
-        }
+    fetchData(
+      `https://ecommerce-backend-efmv.onrender.com/api/product/${id}`,
+      "delete"
+    ).then((data) => {
+      if (data.prod.acknowledged) {
+        toast.success("deleted successfully");
+        navigate("/");
       }
-    );
+    });
   }
   return (
     <div className="w-full">

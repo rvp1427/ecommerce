@@ -7,7 +7,9 @@ function MyOrders() {
   useEffect(
     function () {
       // userid
-      fetch("http://127.0.0.1:4000/api/order/676059c37d0bac3a4ccda9b2")
+      fetch(
+        "https://ecommerce-backend-efmv.onrender.com/api/order/676059c37d0bac3a4ccda9b2"
+      )
         .then((res) => res.json())
         .then((data) => setMyOrders(data.orders));
       console.log("useeffect called");

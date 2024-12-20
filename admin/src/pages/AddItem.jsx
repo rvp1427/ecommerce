@@ -5,6 +5,8 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
+const url = "https://ecommerce-backend-efmv.onrender.com/";
+
 function AddItem() {
   const [formdata, setFormdata] = useState({
     name: "",
@@ -46,15 +48,11 @@ function AddItem() {
     // });
 
     // boundary=----WebKitFormBoundary4snlCIHAD0xCt5J7
-    const req = await axios.post(
-      "http://localhost:4000/api/product",
-      sendForm,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }
-    );
+    const req = await axios.post(`${url}/api/product`, sendForm, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
     if (req.data.status === "success") {
       toast.success("product created successfully!");
       // navigate("/list");
