@@ -13,7 +13,6 @@ function LatestCollection() {
       }
     });
   }, []);
-  console.log(latestCollection);
 
   return (
     <div className="space-y-5">

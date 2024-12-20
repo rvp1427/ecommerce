@@ -81,8 +81,9 @@ function AddItem() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div className="flex flex-col">
-          <label>Upload Image</label>
+        <div className="flex flex-col gap-4">
+          <h2 className="uppercase">Add Item</h2>
+
           <div className="flex gap-4 flex-row">
             <InputImage
               name="img1"

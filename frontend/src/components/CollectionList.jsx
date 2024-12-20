@@ -6,7 +6,6 @@ function CollectionList() {
   const { collection, filteredCollection } = useProd();
   const collect =
     filteredCollection.length > 0 ? filteredCollection : collection;
-  // console.log("test");
   return (
     <div className="grid-col">
       {collection.length === 0 ? (

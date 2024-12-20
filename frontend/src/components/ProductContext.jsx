@@ -77,6 +77,7 @@ function ProductContext({ children }) {
         filteredCollection,
         relatedProducts,
         setCollections,
+        setFilteredCollection,
       }}
     >
       {children}
@@ -89,4 +90,4 @@ function useProd() {
   return context;
 }
 
-export { useProd, ProductContext };
+export { useProd, ProductContext, ProdContext };

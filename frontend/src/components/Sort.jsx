@@ -1,21 +1,28 @@
-import { useProd } from "./ProductContext";
+import { useContext } from "react";
+import { ProdContext } from "./ProductContext";
 import Select from "./Select";
 
 function Sort() {
-  const { setCollections, collection } = useProd();
+  const { setCollections, setFilteredCollection } = useContext(ProdContext);
 
   function handleChange(e) {
     const sort = e.target.value;
-    // console.log(sort, collection);
     if (sort === "asc") {
       setCollections((prev) => {
         const data = prev.sort((a, b) => a.price - b.price);
-        console.log(data);
+        setFilteredCollection(data);
+        return data;
+      });
+    }
+    if (sort === "desc") {
+      setCollections((prev) => {
+        const data = prev.sort((a, b) => b.price - a.price);
+        setFilteredCollection(data);
         return data;
       });
     }
   }
-  // console.log("sort");
+
   return (
     <div className="flex justify-between">
       <div className="line-con">

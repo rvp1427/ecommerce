@@ -11,15 +11,20 @@ function Navbar() {
   // useEffect(function () {
 
   // }, [cart]);
-  const totalItem = cart.reduce(function (prev, curr) {
-    return prev + Number(curr.quantity);
-  }, 0);
+  const totalItem =
+    (cart.length &&
+      cart?.reduce(function (prev, curr) {
+        return prev + Number(curr.quantity);
+      }, 0)) ||
+    0;
 
   // console.log(totalItem);
 
   return (
     <nav className="flex justify-between items-center relative ">
-      <img src="/logo.png" alt="logo" className="h-12" />
+      <NavLink to="/" className="border-none">
+        <img src="/logo.png" alt="logo" className="h-12" />
+      </NavLink>
       <ul
         className={`md:flex gap-8 transition duration-700 md:translate-x-0 items-center justify-center flex-wrap ${
           active
@@ -62,10 +67,8 @@ function Navbar() {
           <i className="bx bx-user"></i>
         </button>
         <NavLink className="relative text-center border-none" to={"/cart"}>
-          <div className="bg-black size-5 rounded-full absolute bottom-0 right-0 text-white">
-            {Number(
-              cart.reduce((prev, curr) => prev.quantity + curr.quantity, 0)
-            ) || 1}
+          <div className="bg-black size-5 rounded-full absolute bottom-0 right-0 text-white text-center text-sm">
+            {totalItem}
           </div>
           <i className="bx bx-shopping-bag"></i>
         </NavLink>

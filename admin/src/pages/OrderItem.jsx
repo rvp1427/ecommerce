@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Select from "../components/Select";
 import { fetchData } from "../utils";
 import { useState } from "react";
+import Loading from "../components/Loading";
 
 function OrderItem() {
   const [orderData, setOrderData] = useState([]);
@@ -28,10 +29,10 @@ function OrderItem() {
 
   return (
     <div>
-      <h1>Order Page</h1>
+      <h2 className="uppercase mb-5">Add Item</h2>
       <table className="max-w-[60rem]">
         <tbody className="">
-          {orderData.length > 0 &&
+          {orderData.length > 0 ? (
             orderData.map((order) => (
               <tr key={order._id}>
                 <td>
@@ -75,7 +76,10 @@ function OrderItem() {
                   />
                 </td>
               </tr>
-            ))}
+            ))
+          ) : (
+            <Loading />
+          )}
         </tbody>
       </table>
     </div>

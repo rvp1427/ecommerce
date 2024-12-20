@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchData } from "../utils";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import Loading from "../components/Loading";
 
 const originalUrl = "https://ecommerce-backend-efmv.onrender.com/api/product";
 
@@ -24,7 +25,7 @@ function ListItem() {
     ).then((data) => {
       if (data.prod.acknowledged) {
         toast.success("deleted successfully");
-        navigate("/");
+        setProductData((prev) => prev.filter((item) => item._id !== id));
       }
     });
   }
@@ -45,7 +46,13 @@ function ListItem() {
           <tbody className="">
             {productData.map((item) => (
               <tr key={item._id}>
-                <td>{item.image[0]}</td>
+                <td>
+                  <img
+                    src={`/${item.image[0]}.png`}
+                    alt={item.name}
+                    className="size-20"
+                  />
+                </td>
                 <td>{item.name}</td>
                 <td>{item.category}</td>
                 <td>{item.price}</td>
@@ -62,7 +69,7 @@ function ListItem() {
           </tbody>
         </table>
       ) : (
-        <h1>not data!</h1>
+        <Loading />
       )}
     </div>
   );

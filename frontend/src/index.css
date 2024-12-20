@@ -11,7 +11,7 @@
     @apply text-3xl;
   }
   img {
-    @apply max-w-full object-cover hover:scale-105 cursor-pointer duration-300 transition;
+    @apply max-w-full object-cover hover:scale-105 cursor-pointer duration-300 transition shadow-md;
   }
 
   .line {

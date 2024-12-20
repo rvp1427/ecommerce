@@ -10,7 +10,6 @@ function BestSeller() {
       setBestseller(data.best);
     });
   }, []);
-  console.log(bestseller);
 
   return (
     <div className="space-y-5">

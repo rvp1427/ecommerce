@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../components/CartContext";
 import CartTotal from "../components/CartTotal";
+import Error from "../components/Error";
+import CartEmpty from "../components/CartEmpty";
 
 function Cart() {
   const { cart, setCart } = useCart();
@@ -69,7 +71,7 @@ function Cart() {
             <th>test</th>
           </tr>
         </thead> */}
-          {cart.length > 0 && (
+          {cart.length > 0 ? (
             <tbody className="w-full inline-table">
               {cart.map((item) => (
                 <tr key={item._id}>
@@ -99,13 +101,17 @@ function Cart() {
                     />
                   </td>
                   <td>
-                    <button>
+                    <button
+                      onClick={() => setCart((prev) => prev._id !== item._id)}
+                    >
                       <i className="bx bx-trash"></i>
                     </button>
                   </td>
                 </tr>
               ))}
             </tbody>
+          ) : (
+            <CartEmpty />
           )}
         </table>
         <CartTotal handleCart={handleCart}>
